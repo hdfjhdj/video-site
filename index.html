@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .tap-area {
+            position: fixed;
+            inset: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<video id="video" loop playsinline>
+    <source src="s.mp4" type="video/mp4">
+</video>
+
+<div class="tap-area" id="tap">Tap to Play</div>
+
+<script>
+    const video = document.getElementById('video');
+    const tap = document.getElementById('tap');
+
+    tap.addEventListener('click', () => {
+        video.play();
+        tap.style.display = "none";
+    });
+</script>
+
+</body>
+</html>
